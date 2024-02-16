@@ -1,3 +1,11 @@
+<?php
+
+	session_start();
+	if (!isset($_SESSION['S_IDUSR'])){
+		header('Location: ../login/index.php');
+	}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +35,8 @@
   <link rel="stylesheet" href="../plantilla/bower_components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="../plantilla/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+
+  <link rel="stylesheet" href="../plantilla/plugins/DataTables/datatables.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -259,7 +269,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="../plantilla/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs"><?php echo $_SESSION['S_USR']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -267,7 +277,7 @@
                 <img src="../plantilla/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  <?php echo $_SESSION['S_USR']; ?> - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -292,7 +302,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="../controlador/user/cont_cerrar_sesion.php" class="btn btn-default btn-flat">Cerrar Sesión</a>
                 </div>
               </li>
             </ul>
@@ -315,7 +325,7 @@
           <img src="../plantilla/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $_SESSION['S_USR']; ?></p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -780,5 +790,40 @@
 
 <!-- AdminLTE for demo purposes -->
 <script src="../plantilla/dist/js/demo.js"></script>
+<script src="../plantilla/plugins/DataTables/datatables.min.js"></script>
+
+<script>
+  var idioma_espanol = {
+    select: {
+      rows: "%d fila seleccionada"
+    },
+    "sProcessing": "Procesando...",
+    "sLengthMenu": "Mostrar _MENU_ registros",
+    "sZeroRecords": "No se encontraron resultados",
+    "sEmptyTable": "Ningun dato disponible en esta tabla",
+    "sInfo": "Registros del (_START_ al _END_) total de _TOTAL_ registros",
+    "sInfoEmpty": "Registros del (0 al 0) total de 0 registros",
+    "sInfoFiltered": "(filtrado de un total de _MAX_ registros",
+    "sInfoPostFix": "",
+    "sSearch": "Buscar: ",
+    "sUrl": "",
+    "sInfoThousands": ",",
+    "sLoadingRecords": "<b>No se encontraron datos</b>",
+    "oPaginate": {
+      "sFirst": "Primero",
+      "sLast": "Último",
+      "sNext": "Siguiente",
+      "sPrevious": "Anterior"
+    },
+    "oAria": {
+      "sSortAscending": "Activar para ordenar la columna de manera ascendente",
+      "sSortgDescending": "Activar para ordenar la columna de manera descendente"
+    }
+  }
+
+  
+
+</script>
+
 </body>
 </html>

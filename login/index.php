@@ -1,3 +1,11 @@
+<?php
+
+	session_start();
+	if (isset($_SESSION['S_IDUSR'])){
+		header('Location: ../vista/index.php');
+	}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -61,7 +69,7 @@
 										<a href="#">¿Olvidó la contraseña?</a>
 									</div>
 								</div>
-</div>
+							</div>
 						</div>
 					</div>
 				</div>
