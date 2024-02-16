@@ -62,3 +62,39 @@ function verificarUsr() {
     });
   });
 }
+
+function list_usr(){
+  var table = $("#t_usr").DataTable({
+    "ordering": false,
+    "paging": false,
+    "searching": { "regex": true },
+    "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "ALL"] ],
+    "pageLength": 100,
+    "destroy": true,
+    "async": false,
+    "processing": true,
+    "ajax": {
+      "url": "../controlador/user/cont_listar_usr.php",
+      type: 'POST'
+    },
+    "columns": [
+      { "data": "posicion" },
+      { "data": "persona" },
+      { "data": "usr_name" },
+      { "data": "usr_rol" },
+      { "data": "usr_gen" },
+      { "data": "usr_status",
+      render: function(data, type, row){
+        if(data == 'activo'){
+          return "<span class='label label-danger'>" + data + "</span>"
+        } else {
+          return "<span class='label label-danger'>" + data + "</span>"
+        }
+      }
+     },
+     { "defaultConten": "<button style='font-size: 13px;' type='button' class='editar btn btn_primary>'" }
+    ],
+    "language": idioma_espanol,
+    select: true
+  });
+}
