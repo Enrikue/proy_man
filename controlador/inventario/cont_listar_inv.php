@@ -1,9 +1,9 @@
 <?php
 
-    require '../../modelo/mod_usr.php';
+    require '../../modelo/mod_inv.php';
 
-    $MU = new Mod_Usr();
-    $consulta = $MU -> list_usr();
+    $MV = new Mod_Inv();
+    $consulta = $MV -> list_inventario();
     if($consulta){
         echo json_encode($consulta);
     } else {

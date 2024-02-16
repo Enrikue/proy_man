@@ -22,6 +22,18 @@
             }
         }
 
+        function list_usr(){
+            $sql = "call SP_LISTAR_USR()";
+            $arreglo = array();
+            if($consulta = $this -> conection -> conection -> query($sql)){
+                while($consulta_VU = mysqli_fetch_assoc($consulta)){
+                    $arreglo["data"][] = $consulta_VU;
+                }
+                return $arreglo;
+                $this -> conection -> cerrar();
+            }
+        }
+
     }
 
 ?>

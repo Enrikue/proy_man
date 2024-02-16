@@ -351,6 +351,14 @@
             </span>
           </a>
         </li>
+        <li class="active treeview">
+          <a onclick="cargar_contenido('contenido_principal','inventario/listar_inv.php')">
+            <i class="fa fa-dashboard"></i> <span>Inventario</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
