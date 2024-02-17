@@ -81,7 +81,7 @@ function list_usr() {
       type: "POST",
     },
     columns: [
-      { data: "posicion" },
+      { data: "pos" },
       { data: "usr_name" },
       { data: "rol_nombre" },
       {
@@ -107,7 +107,7 @@ function list_usr() {
       {
         defaultContent:
           "<button style='font-size: 13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>",
-      },
+      }, 
     ],
     language: idioma_espanol,
     select: true,

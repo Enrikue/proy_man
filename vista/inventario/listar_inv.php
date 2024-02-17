@@ -20,7 +20,6 @@
                         <th>Marca</th>
                         <th>Modelo</th>
                         <th>Status</th>
-                        <th>Observaciones</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -31,7 +30,6 @@
                         <th>Marca</th>
                         <th>Modelo</th>
                         <th>Status</th>
-                        <th>Observaciones</th>
                     </tr>
                 </tfoot>
             </table>
@@ -41,7 +39,7 @@
     <!-- /.box -->
 </div>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         list_inventario();
     })
 </script>

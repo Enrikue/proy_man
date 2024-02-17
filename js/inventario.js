@@ -5,9 +5,9 @@ function list_inventario() {
       searching: { regex: true },
       lengthMenu: [
         [10, 25, 50, 100, -1],
-        [10, 25, 50, 100, "ALL"],
+        [10, 25, 50, 100, "ALL"]
       ],
-      pageLength: 100,
+      pageLength: 10,
       destroy: true,
       async: false,
       processing: true,
@@ -16,14 +16,12 @@ function list_inventario() {
         type: "POST",
       },
       columns: [
-        { data: "posicion" },
         { data: "n_inv" },
         { data: "num_serial" },
         { data: "dsc" },
         { data: "marca"},
         { data: "modelo"},
         { data: "status"},
-        { data: "observacion"},
       ],
       language: idioma_espanol,
       select: true,

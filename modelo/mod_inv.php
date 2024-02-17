@@ -9,17 +9,17 @@
         }    
 
         function list_inventario(){
-            $sql = "call SP_LISTAR_INV()";
+            $sql = "call SP_LISTAR_INVENTARIO()";
             $arreglo = array();
             if($consulta = $this -> conection -> conection -> query($sql)){
-                while($consulta_Inv = mysqli_fetch_assoc($consulta)){
-                    $arreglo["data"][] = $consulta_Inv;
+                while($consulta_VU = mysqli_fetch_assoc($consulta)){
+                    $arreglo["data"][] = $consulta_VU;
+                }
                 }
                 return $arreglo;
                 $this -> conection -> cerrar();
             }
         }
 
-    }
 
 ?>

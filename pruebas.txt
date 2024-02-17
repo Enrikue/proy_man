@@ -1,0 +1,38 @@
+
+{ data: "posicion" },
+      { data: "usr_name" },
+      { data: "rol_nombre" },
+      {
+        data: "usr_gen",
+        render: function (data, type, row) {
+          if (data == "m") {
+            return "MASCULINO";
+          } else {
+            return "FEMENINO";
+          }
+        },
+      },
+      {
+        data: "usr_status",
+        render: function (data, type, row) {
+          if (data == "activo") {
+            return "<span class='label label-success'>" + data + "</span>";
+          } else {
+            return "<span class='label label-danger'>" + data + "</span>";
+          }
+        },
+      },
+      {
+        defaultContent:
+          "<button style='font-size: 13px;' type='button' class='editar btn btn-primary'><i class='fa fa-edit'></i></button>",
+      }, 
+
+
+
+
+
+
+
+      { data: "modelo"},
+        { data: "status"},
+        { data: "observacion"},
