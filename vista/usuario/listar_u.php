@@ -11,6 +11,18 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body">
+        <div class = "form-group">
+                <div class = "col-lg-10">
+                    <div class = "input-group">
+                        <input type="text" class="global_filter form-control" id="global_filter"
+                        placeholder="Ingresar dato a buscar">
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+                <div class = "col-lg-2">
+                    <button class="btn btn-danger" style="width: 100%"><i class="glyphicon glyphicon-plus"></i>  Nuevo Registro</button>
+                </div>
+            </div>
         <table id="t_usr" class="display responsive nowrap" style="width:100%">
             <thead>
                 <tr>

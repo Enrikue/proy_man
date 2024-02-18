@@ -26,4 +26,21 @@ function list_inventario() {
       language: idioma_espanol,
       select: true,
     });
+    document.getElementById("t_inventario_filter").style.display="none";
+    $('input.global_filter').on('keyup click',function(){
+      filterGlobal();
+    });
+    $('input.column_filter').on('keyup click',function(){
+      filterColumn($(this).parents('tr').attr('data-column'));
+    });
+  }
+
+  function filterGlobal(){
+    $('#t_inventario').DataTable().search(
+      $('#global_filter').val(),
+    ).draw();
+  }
+
+  function AbrirModalRegistroInventario(){
+    $("#m_reg_inv").modal('show');
   }
