@@ -81,7 +81,7 @@ function list_usr() {
       type: "POST",
     },
     columns: [
-      { data: "pos" },
+      { data: "posicion" },
       { data: "usr_name" },
       { data: "rol_nombre" },
       {

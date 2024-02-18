@@ -56,7 +56,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Registro de Inventario</h4>
+                <h4 class="modal-title"><b>Registro de Inventario</b></h4>
             </div>
             <div class="modal-body">
                 <div class="col-lg-12">
@@ -80,9 +80,16 @@
                     <label>Modelo</label>
                     <input type="text" class="form-control" id="txt_modelo_reg" placeholder="Ingrese Modelo del ...">
                 </div><br>
+                <div class="col-lg-12">
+                    <label>Seleccione el Estado del ... </label><br>
+                    <select class="js-example-basic-single" name="state" style="width:50%;" id="cbm_status">
+
+                    </select>
+                </div><br><br>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button class="btn btn-success" >Añadir</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -90,5 +97,7 @@
 <script>
     $(document).ready(function () {
         list_inventario();
+        $('.js-example-basic-single').select2();
+        list_combo_status();
     })
 </script>

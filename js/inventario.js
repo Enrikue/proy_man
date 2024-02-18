@@ -21,7 +21,7 @@ function list_inventario() {
         { data: "dsc" },
         { data: "marca"},
         { data: "modelo"},
-        { data: "status"},
+        { data: "status_nombre"},
       ],
       language: idioma_espanol,
       select: true,
@@ -42,5 +42,25 @@ function list_inventario() {
   }
 
   function AbrirModalRegistroInventario(){
+    $("#m_reg_inv").modal({backdrop:'static', keyboard:false})
     $("#m_reg_inv").modal('show');
+  }
+
+  function list_combo_status(){
+    $.ajax({
+      url: "../controlador/inventario/cont_lista_combo_status.php",
+      type: "POST",
+    }).done(function(resp){
+      alert(resp);
+      var data = JSON.parse(resp);
+      var cadena = "";
+      if(data.length > 0){
+        for(var i = 0; i < data.length; i++){
+          cadena += "<option value='"+data[i][0]+"'>"+data[i][1]+"</option>";
+        }
+        $("#cbm_status").html(cadena);
+      }else{
+        cadena += "<option value=''>NO SE ENCONTRARON DATOS</option>";
+      }
+    })
   }

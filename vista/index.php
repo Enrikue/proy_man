@@ -38,6 +38,8 @@
 
   <link rel="stylesheet" href="../plantilla/plugins/DataTables/datatables.min.css">
 
+  <link rel="stylesheet" href="../plantilla/plugins/select2/select2.min.css">
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -799,6 +801,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../plantilla/dist/js/demo.js"></script>
 <script src="../plantilla/plugins/DataTables/datatables.min.js"></script>
+<script src="../plantilla/plugins/select2/select2.min.js"></script>
 
 <script>
   var idioma_espanol = {
