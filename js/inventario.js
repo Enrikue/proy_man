@@ -1,7 +1,7 @@
 function list_inventario() {
     var table = $("#t_inventario").DataTable({
-      ordering: false,
-      paging: false,
+      //ordering: false,
+      //paging: false,
       searching: { regex: true },
       lengthMenu: [
         [10, 25, 50, 100, -1],
@@ -21,7 +21,22 @@ function list_inventario() {
         { data: "dsc" },
         { data: "marca"},
         { data: "modelo"},
-        { data: "status_nombre"},
+        {
+          data: "status_nombre",
+          render: function (data, type, row) {
+            switch(data){
+              case 'BUENO': return "<span class='label label-success'>" + data + "</span>";
+                            break;
+              case 'EN RIESGO': return "<span class='label label-warning'>" + data + "</span>";
+                                break;
+              case 'DAÑADO': return "<span class='label label-danger'>" + data + "</span>";
+                             break;
+              case 'DESCONOCIDO': return "<span class='label label-primary'>" + data + "</span>";
+                                  break;
+            }
+          },
+        },
+        { data: "observacion"},
       ],
       language: idioma_espanol,
       select: true,
@@ -51,7 +66,6 @@ function list_inventario() {
       url: "../controlador/inventario/cont_lista_combo_status.php",
       type: "POST",
     }).done(function(resp){
-      alert(resp);
       var data = JSON.parse(resp);
       var cadena = "";
       if(data.length > 0){

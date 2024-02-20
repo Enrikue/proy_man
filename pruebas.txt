@@ -36,3 +36,15 @@
       { data: "modelo"},
         { data: "status"},
         { data: "observacion"},
+
+
+
+
+
+
+
+        if (data == "BUENO") {
+              return "<span class='label label-success'>" + data + "</span>";
+            } else {
+              return "<span class='label label-danger'>" + data + "</span>";
+            }

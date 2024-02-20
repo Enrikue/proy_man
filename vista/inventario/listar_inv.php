@@ -33,6 +33,7 @@
                         <th>Marca</th>
                         <th>Modelo</th>
                         <th>Status</th>
+                        <th>OBSERVACIONES</th>
                     </tr>
                 </thead>
                 <tfoot>
@@ -43,6 +44,7 @@
                         <th>Marca</th>
                         <th>Modelo</th>
                         <th>Status</th>
+                        <th>OBSERVACIONES</th>
                     </tr>
                 </tfoot>
             </table>

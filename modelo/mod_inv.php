@@ -12,7 +12,7 @@ class Mod_Inv
 
     function list_inventario()
     {
-        $sql = "call SP_LISTAR_INV()";
+        $sql = "call SP_LISTAR_INVENTARIO()";
         $arreglo = array();
         if ($consulta = $this->conection->conection->query($sql)) {
             while ($consulta_VU = mysqli_fetch_assoc($consulta)) {

@@ -1,0 +1,10 @@
+BEGIN
+DECLARE CANTIDAD INT;
+SET @CANTIDAD:=(SELECT COUNT(*) FROM inventario WHERE n_inv = BINARY NUM_INV);
+IF @CANTIDAD:=0 THEN
+	INSERT INTO inventario(n_inv, num_serial, dsc, marca, modelo, status_id, observacion) VALUES (NUM_INV, NUM_SERIAL, DSC, MARCA, MODELO, STATUS_ID, OBSERVACION);
+    SELECT 1;
+ELSE 
+	SELECT 2;
+END IF;
+END

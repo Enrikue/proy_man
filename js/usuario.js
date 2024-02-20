@@ -97,7 +97,7 @@ function list_usr() {
       {
         data: "usr_status",
         render: function (data, type, row) {
-          if (data == "activo") {
+          if (data == "ACTIVO") {
             return "<span class='label label-success'>" + data + "</span>";
           } else {
             return "<span class='label label-danger'>" + data + "</span>";
