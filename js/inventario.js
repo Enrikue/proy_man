@@ -1,5 +1,6 @@
+var table;
 function list_inventario() {
-    var table = $("#t_inventario").DataTable({
+    table = $("#t_inventario").DataTable({
       //ordering: false,
       //paging: false,
       searching: { regex: true },
@@ -77,4 +78,55 @@ function list_inventario() {
         cadena += "<option value=''>NO SE ENCONTRARON DATOS</option>";
       }
     })
+  }
+
+  function Registrar_Inventario(){
+    var n_inv = $("#txt_n_inv_reg").val();
+    var n_serial = $("#txt_n_serial_reg").val();
+    var descripcion = $("#txt_desc_reg").val();
+    var marca = $("#txt_marca_reg").val();
+    var modelo = $("#txt_modelo_reg").val();
+    var observacion = $("#txt_observacion_reg").val();
+    var status = $("#cbm_status"). val();
+    if( n_inv.length == 0 || n_serial.length == 0 || descripcion.length == 0 || marca.length == 0 || modelo.length == 0 || observacion.length == 0 || status.length == 0 ){
+      return Swal.fire("Advertencia", "Llene los campos vacios", "warning");
+    }
+
+    $.ajax({
+      url: "../controlador/inventario/cont_registrar_inventario.php",
+      type: "POST",
+      data:{
+        num_inv: n_inv,
+        num_serial: n_serial,
+        dsc: descripcion,
+        marca_inv: marca,
+        mod: modelo,
+        observ: observacion,
+        status_inv: status
+      }
+    }).done(function(resp){
+      if(resp > 0){
+        if(resp==1){
+          $("#m_reg_inv").modal('hide');
+          Swal.fire("Exito", "Se registro correctamente en el inventario", "success").then((value) => {
+            LimpiarRegistro();
+            table.ajax.reload();
+          });
+        } else{
+          return Swal.fire("Error", "El registro ya existe en la base de datos", "error");
+        }
+      } else{
+          return Swal.fire("Error", "El registro no puede ser completado", "error");
+      }
+    })
+
+  }
+
+  function LimpiarRegistro(){
+    $("#txt_n_inv_reg").val("");
+    $("#txt_n_serial_reg").val("");
+    $("#txt_n_desc_reg").val("");
+    $("#txt_n_marca_reg").val("");
+    $("#txt_n_modelo_reg").val("");
+    $("#txt_n_observacion_reg").val("");
   }

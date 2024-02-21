@@ -36,6 +36,19 @@ class Mod_Inv
             $this->conection->cerrar();
         }
     }
+
+    function Registrar_Inv($n_inv, $n_serial, $descripcion, $marca, $modelo, $observacion, $status)
+    {
+        $sql = "call SP_REGISTRAR_INVENTARIO('$n_inv', '$n_serial', '$descripcion', '$marca', '$modelo', '$status', '$observacion')";
+        $arreglo = array();
+        if ($consulta = $this->conection->conection->query($sql)) {
+            if ($row = mysqli_fetch_array($consulta)) {
+                return $id_r = trim($row[0]);
+
+            }
+            $this->conection->cerrar();
+        }
+    }
 }
 
 

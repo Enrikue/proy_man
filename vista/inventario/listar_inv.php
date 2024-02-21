@@ -83,14 +83,17 @@
                     <input type="text" class="form-control" id="txt_modelo_reg" placeholder="Ingrese Modelo del ...">
                 </div><br>
                 <div class="col-lg-12">
+                    <label>Observaciones</label>
+                    <input type="text" class="form-control" id="txt_observacion_reg" placeholder="Ingrese Observaciones sobre el ...">
+                </div><br>
+                <div class="col-lg-12">
                     <label>Seleccione el Estado del ... </label><br>
                     <select class="js-example-basic-single" name="state" style="width:50%;" id="cbm_status">
-
                     </select>
                 </div><br><br>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success" >Añadir</button>
+                <button class="btn btn-success" onclick="Registrar_Inventario()" >Añadir</button>
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>

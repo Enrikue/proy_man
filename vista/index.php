@@ -802,6 +802,8 @@
 <script src="../plantilla/dist/js/demo.js"></script>
 <script src="../plantilla/plugins/DataTables/datatables.min.js"></script>
 <script src="../plantilla/plugins/select2/select2.min.js"></script>
+<script src="../plantilla/plugins/sweetalert2/sweetalert211.js"></script>
+
 
 <script>
   var idioma_espanol = {
